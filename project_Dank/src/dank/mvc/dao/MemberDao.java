@@ -4,6 +4,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import dank.mvc.vo.MemberLogVO;
 import dank.mvc.vo.MemberVO;
 
 @Repository
@@ -14,6 +15,10 @@ public class MemberDao {
 
 	public String pwdChk(int num) {
 		return ss.selectOne("member.pwdChk", num);
+	}
+	
+	public String serPhone(int num) {
+		return ss.selectOne("member.serPhoneNum", num);
 	}
 	
 	public String nameChk(String email) {
@@ -28,6 +33,10 @@ public class MemberDao {
 		return ss.selectOne("member.serNameEmail", num);
 	}
 	
+	public String serNumToName(int num) {
+		return ss.selectOne("member.serNumToName", num);
+	}
+	
 	public String forBirth(int num) {
 		return ss.selectOne("member.forBirth", num);
 	}
@@ -37,6 +46,15 @@ public class MemberDao {
 	
 	public MemberVO memLogin(MemberVO user) {
 		return ss.selectOne("member.memlogin", user);
+	}
+	
+	public MemberVO addMemLog(MemberLogVO vo) {
+		return ss.selectOne("member.memberLog", vo);
+	}
+
+	public MemberVO getMem_code(String your_email) {
+		// TODO Auto-generated method stub
+		return ss.selectOne("member.getMem_code", your_email);
 	}
 
 }

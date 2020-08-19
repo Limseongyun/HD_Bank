@@ -5,7 +5,11 @@
 		auth="Container"
 		type="javax.sql.DataSource"
 		driverClassName="oracle.jdbc.driver.OracleDriver"
+<<<<<<< HEAD
 		url="jdbc:oracle:thin:@192.168.0.196:1521:orcl"
+=======
+		url="jdbc:oracle:thin:@192.168.0.122:1521:orcl"
+>>>>>>> branch 'newjinhyu' of https://github.com/wlsgb/HD_Bank.git
 		username="hd"
 		password="hd"
 		maxActive="20"
